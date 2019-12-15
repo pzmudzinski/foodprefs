@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-3">
+    <h3>Categories</h3>
+    <ul class="list-group">
+      <%= for category <- @categories do %>
+      <li class="list-group-item"><%= category.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

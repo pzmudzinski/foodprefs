@@ -1,0 +1,19 @@
+defmodule FoodPrefs.FoodCategory do
+  use Ecto.Schema
+  import Ecto.Changeset
+
+  schema "food_categories" do
+    field :name, :string
+    field :notes, :string
+
+    timestamps()
+  end
+
+  @doc false
+  def changeset(food_category, attrs) do
+    food_category
+    |> cast(attrs, [:name, :notes])
+    |> validate_required([:name, :notes])
+    |> unique_constraint(:name)
+  end
+end
