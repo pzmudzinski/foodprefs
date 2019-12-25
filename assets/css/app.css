@@ -5,6 +5,11 @@
 
 @tailwind components;
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   display: grid;
 
@@ -67,6 +72,18 @@ aside {
 
 footer {
   grid-area: footer;
+  padding: 0.5rem;
+}
+
+.food_categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 1024px) {
+  .food_categories {
+    grid-template-columns: 1fr;
+  }
 }
 
 @tailwind utilities;

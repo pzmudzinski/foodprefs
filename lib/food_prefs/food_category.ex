@@ -10,10 +10,10 @@ defmodule FoodPrefs.FoodCategory do
   end
 
   @doc false
-  def changeset(food_category, attrs) do
+  def changeset(food_category, attrs \\ %{}) do
     food_category
     |> cast(attrs, [:name, :notes])
-    |> validate_required([:name, :notes])
+    |> validate_required([:name])
     |> unique_constraint(:name)
   end
 end

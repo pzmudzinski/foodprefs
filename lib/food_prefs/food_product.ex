@@ -13,10 +13,11 @@ defmodule FoodPrefs.FoodProduct do
   end
 
   @doc false
-  def changeset(food_product, attrs) do
+  def changeset(food_product, attrs \\ %{}) do
     food_product
-    |> cast(attrs, [:name, :notes])
-    |> validate_required([:name, :notes])
+    |> cast(attrs, [:name, :notes, :category_id, :kcal, :score])
+    |> validate_required([:name, :category_id])
+    |> foreign_key_constraint(:category_id)
     |> unique_constraint(:name)
   end
 end

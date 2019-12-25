@@ -1,0 +1,7 @@
+[
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "mix test"
+  }
+]

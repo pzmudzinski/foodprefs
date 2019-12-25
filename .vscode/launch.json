@@ -20,7 +20,7 @@
       "projectDir": "${workspaceRoot}"
     },
     {
-      "type": "mix_task",
+      "type": "mix_task",q
       "name": "mix test",
       "request": "launch",
       "task": "test",
