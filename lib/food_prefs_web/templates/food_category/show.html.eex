@@ -17,5 +17,4 @@
 </tbody>
 </table>
 
-<span><%= link "Edit", to: Routes.food_category_path(@conn, :edit, @food_category) %></span>
 <span><%= link "Back", to: Routes.food_category_path(@conn, :index) %></span>

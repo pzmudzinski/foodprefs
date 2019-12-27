@@ -17,11 +17,17 @@ defmodule FoodPrefs.Food do
       [%FoodProduct{}, ...]
 
   """
-  def list_products do
-    Repo.all(FoodProduct)
+  def list_products(params) do
+    search_term = get_in(params, ["query"])
+    wildcard_search = "%#{search_term}%"
+
+    query = from product in FoodProduct, where: ilike(product.name, ^wildcard_search)
+
+    query
+     |> Repo.all
   end
 
-  def list_products(category_id) do
+  def list_products_by_category_id(category_id) do
     FoodProduct
      |> where(category_id: ^category_id)
      |> Repo.all()
@@ -122,14 +128,36 @@ defmodule FoodPrefs.Food do
   end
 
   def list_categories_with_top_product(product_count \\ 10) do
-    query = from list in FoodProduct,
-      join: category in assoc(list, :category_id),
-      group_by: list.category_id,
-      order_by: [asc: :score],
-      limit: ^product_count,
-      select_merge: %{ category_name: category.name }
+    # query = from list in FoodProduct,
+    #   join: category in assoc(list, :category),
+    #   group_by: [list.category_id, list.score],
+    #   order_by: [asc: :score],
+    #   limit: ^product_count,
+    #   select: {list.category_id}
 
-    query |> Repo.all
+    # query |> Repo.all
+
+#     SELECT
+#   *
+# FROM (
+#   SELECT
+#     ROW_NUMBER() OVER (PARTITION BY section_id ORDER BY name) AS r,
+#     t.*
+#   FROM
+#     xxx t) x
+# WHERE
+#   x.r <= 2;
+
+    ranks = from p in FoodProduct, select: %{p | rank: row_number() |> over(partition_by: p.category_id, order_by: p.score)}
+
+    query = from pranked in subquery(ranks), where: pranked.rank <= 10
+
+    query
+     |> Repo.all
+     |> Repo.preload([:category])
+     |> Enum.group_by(fn x -> x.category_id end)
+     |> Map.values
+     |> Enum.to_list
   end
 
   @doc """

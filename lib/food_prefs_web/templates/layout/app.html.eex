@@ -11,16 +11,25 @@
   </head>
   <body class="bg-gray-100">
   <div class="container">
-      <header class="bg-teal-500 p-6 text-white">
+      <header class="bg-teal-500 p-6 text-white flex flex-col">
         <!--<nav role="navigation">
           <ul>
             <li><a href="<%= Routes.food_category_path(@conn, :index) %>">Home</a></li>
           </ul>
           
         </nav>  -->
+        <section>
+           <h1 class="text-4xl font-bold">Czego nie je Piotrek?</h1>
+        </section>
+       
         <section class="bg-indigo-dark p-2 w-full">
-                <input class="text-gray-900 w-full h-16 px-3 rounded focus:outline-none focus:shadow-outline px-8 shadow-lg" type="search" placeholder="Szukaj...">
-                <!--<nav class="flex">
+    <%= form_for @conn, Routes.food_product_path(@conn, :index), [method: :get, class: ""], fn f -> %>
+      <%= search_input f, :query, [class: "text-gray-900 w-full h-16 px-3 rounded focus:outline-none focus:shadow-outline px-8 shadow-lg"] %>
+
+    <% end %>
+
+                <!--<input class="" type="search" placeholder="Szukaj...">
+                <nav class="flex">
                   <a class="no-underline text-white py-3 px-4 font-medium mr-3 bg-indigo hover:bg-indigo-darker" href="#">Cardamom</a>
                   <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo-darker hover:bg-indigo" href="#">Cinnamon</a>
                   <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo hover:bg-indigo-darker" href="#">Chamomille</a>

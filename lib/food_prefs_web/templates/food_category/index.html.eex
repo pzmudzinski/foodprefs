@@ -1,4 +1,4 @@
-<h1>Listing Categories</h1>
+
 
     <article class="food_categories">
     <%= for food_category <- @categories do %>
@@ -7,5 +7,3 @@
     </article>
 
 
-
-<span><%= link "New Food category", to: Routes.food_category_path(@conn, :new) %></span>

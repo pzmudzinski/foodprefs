@@ -5,9 +5,11 @@ defmodule FoodPrefs.FoodProduct do
   schema "food_products" do
     field :name, :string
     field :notes, :string
-    field :category_id, :id
+    belongs_to :category, FoodPrefs.FoodCategory
     field :kcal, :integer
     field :score, :integer
+
+    field(:rank, :integer, virtual: true)
 
     timestamps()
   end
@@ -17,7 +19,7 @@ defmodule FoodPrefs.FoodProduct do
     food_product
     |> cast(attrs, [:name, :notes, :category_id, :kcal, :score])
     |> validate_required([:name, :category_id])
-    |> foreign_key_constraint(:category_id)
+    |> assoc_constraint(:category)
     |> unique_constraint(:name)
   end
 end

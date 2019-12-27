@@ -5,7 +5,8 @@ defmodule FoodPrefsWeb.FoodCategoryController do
   alias FoodPrefs.FoodCategory
 
   def index(conn, _params) do
-    categories = Food.list_categories()
+    categories = Food.list_categories_with_top_product(10)
+    IO.inspect(categories, limit: :infinity)
     render(conn, "index.html", categories: categories)
   end
 

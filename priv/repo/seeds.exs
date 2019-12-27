@@ -18,8 +18,13 @@ SeedExtract.get_seeds()
   food_products =
     products
     |> Enum.map(fn %{:kcal => kcal, :name => name} ->
-      %{kcal: kcal, name: name, category_id: category.id}
+      %{kcal: kcal, name: name}
+    end)
+    |> Enum.map(fn product ->
+      Ecto.build_assoc(category, :products, product)
+    end)
+    |> Enum.each(fn assoc ->
+      FoodPrefs.Repo.insert!(assoc)
     end)
 
-  FoodPrefs.Repo.insert_all(FoodPrefs.FoodProduct, food_products)
 end)

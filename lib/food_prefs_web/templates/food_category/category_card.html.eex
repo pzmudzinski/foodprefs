@@ -1,7 +1,23 @@
+
       <div class="p-2">
-        <a href=<%= Routes.food_category_path(@conn, :show, @food_category) %> >
-          <div class="px-2 overflow-hidden h-64 bg-blue-500 hover:bg-blue-700">
-            <h1 class="font-bold text-white"><%= @food_category.name %></h1>
+        <a href=<%= Routes.food_category_path(@conn, :show, hd(@food_category).category) %> >
+          <div class="px-2 py-1 overflow-hidden bg-blue-500 hover:bg-blue-700">
+            <h1 class="font-bold text-white"><%= hd(@food_category).category.name %></h1>
+                      <ul class="text-white">
+                <%= for product <- @food_category do %>
+                <li>
+                  <%= product.name %>
+                  <%= if product.score == 100 do %>
+                    <img class="inline" src="<%= Routes.static_path(@conn, "/images/thumb_up.svg") %>" alt="ok"/>
+                  <% else %>
+                    <img class="inline" src="<%= Routes.static_path(@conn, "/images/thumb_down.svg") %>" alt="nope"/>
+                  <% end %>
+
+                </li>
+                <% end %>
+          </ul>
           </div>
+
+
         </a>
         </div>

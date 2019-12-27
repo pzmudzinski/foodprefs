@@ -4,8 +4,8 @@ defmodule FoodPrefsWeb.FoodProductController do
   alias FoodPrefs.Food
   alias FoodPrefs.FoodProduct
 
-  def index(conn, _params) do
-    products = Food.list_products()
+  def index(conn, params) do
+    products = Food.list_products(params)
     render(conn, "index.html", products: products)
   end
 

@@ -5,6 +5,7 @@ defmodule FoodPrefs.FoodCategory do
   schema "food_categories" do
     field :name, :string
     field :notes, :string
+    has_many :products, FoodPrefs.FoodProduct, foreign_key: :category_id
 
     timestamps()
   end
