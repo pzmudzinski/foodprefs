@@ -1,5 +1,0 @@
-<h1>Edit Food category</h1>
-
-<%= render "form.html", Map.put(assigns, :action, Routes.food_category_path(@conn, :update, @food_category)) %>
-
-<span><%= link "Back", to: Routes.food_category_path(@conn, :index) %></span>

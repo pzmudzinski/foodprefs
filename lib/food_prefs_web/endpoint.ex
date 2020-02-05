@@ -42,5 +42,15 @@ defmodule FoodPrefsWeb.Endpoint do
     key: "_food_prefs_key",
     signing_salt: "vqyJFuCy"
 
+  plug CORSPlug
+
+  plug(
+    Plug.Static,
+    at: "/torch",
+    from: {:torch, "priv/static"},
+    gzip: true,
+    cache_control_for_etags: "public, max-age=86400"
+  )
+
   plug FoodPrefsWeb.Router
 end

@@ -43,7 +43,9 @@ defmodule FoodPrefs.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:floki, "~> 0.23.0"}
+      {:floki, "~> 0.23.0"},
+      {:cors_plug, "~> 2.0"},
+      {:torch, "~> 2.0"}
     ]
   end
 

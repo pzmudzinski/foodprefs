@@ -1,5 +1,0 @@
-<h1>Show Food product</h1>
-
-
-<span><%= link "Edit", to: Routes.food_product_path(@conn, :edit, @food_product) %></span>
-<span><%= link "Back", to: Routes.food_product_path(@conn, :index) %></span>

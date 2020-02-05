@@ -1,9 +1,0 @@
-
-
-    <article class="food_categories">
-    <%= for food_category <- @categories do %>
-      <%= render("category_card.html", food_category: food_category, conn: @conn) %>
-    <% end %>
-    </article>
-
-

@@ -1,6 +1,7 @@
 defmodule FoodPrefs.FoodProduct do
   use Ecto.Schema
   import Ecto.Changeset
+  @derive {Jason.Encoder, only: [:id, :name, :notes, :kcal, :score]}
 
   schema "food_products" do
     field :name, :string

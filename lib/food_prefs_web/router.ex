@@ -11,19 +11,19 @@ defmodule FoodPrefsWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CORSPlug, origin: "*"
   end
 
-  scope "/", FoodPrefsWeb do
+  scope "/admin", FoodPrefsWeb do
     pipe_through :browser
-
-    get "/", FoodCategoryController, :index
-    resources "/products", FoodProductController, only: [:index, :show]
-    resources "/categories", FoodCategoryController, only: [:index, :show]
-
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", FoodPrefsWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", FoodPrefsWeb.API do
+    pipe_through :api
+
+    resources "/categories", FoodCategoryController, only: [:index, :show]
+    get "/categories/summaries", FoodCategoryController, :summaries
+    get "/categories/:id/products", FoodCategoryController, :get_products
+    resources "/products", FoodProductController, only: [:index, :show]
+  end
 end
