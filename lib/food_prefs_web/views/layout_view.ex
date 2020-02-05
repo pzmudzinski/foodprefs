@@ -1,3 +1,3 @@
-defmodule FoodPrefsWeb.LayoutView do
+defmodule FoodPrefs.LayoutView do
   use FoodPrefsWeb, :view
 end

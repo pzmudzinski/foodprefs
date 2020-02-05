@@ -8,8 +8,6 @@ defmodule FoodPrefsWeb.API.FoodCategoryView do
   end
 
   def render("summary.json", products) do
-    IO.puts "____"
-    IO.inspect(products, limit: :infinity)
     category = hd(products.food_category).category
     %{ category: category, products: products.food_category }
   end

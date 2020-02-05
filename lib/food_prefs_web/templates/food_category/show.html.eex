@@ -1,0 +1,27 @@
+<section id="torch-toolbar">
+  <div class="torch-container">
+    <%= link "Edit", to: Routes.food_category_path(@conn, :edit, @food_category), class: "torch-button" %>
+    <%= link "Back", to: Routes.food_category_path(@conn, :index), class: "torch-button" %>
+  </div>
+</section>
+
+<section id="torch-header-and-content">
+  <div class="torch-container">
+    <div class="header">
+      <h3>Food category Details</h3>
+    </div>
+    <ul>
+      
+        <li>
+          <div class="torch-show-label">Name:</div>
+          <div class="torch-show-data"><%= @food_category.name %></div>
+        </li>
+      
+        <li>
+          <div class="torch-show-label">Notes:</div>
+          <div class="torch-show-data"><%= @food_category.notes %></div>
+        </li>
+      
+    </ul>
+  </div>
+</section>

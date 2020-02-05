@@ -1,0 +1,65 @@
+@@ -1,64 +0,0 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Czego nie je Piotrek?</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    
+
+  </head>
+  <body class="bg-gray-100">
+  <div class="container">
+      <header class="bg-teal-500 p-6 text-white flex flex-col">
+        <!--<nav role="navigation">
+          <ul>
+            <li><a href="<%= Routes.food_category_path(@conn, :index) %>">Home</a></li>
+          </ul>
+          
+        </nav>  -->
+        <section>
+           <h1 class="text-4xl font-bold">Czego nie je Piotrek?</h1>
+        </section>
+       
+        <section class="bg-indigo-dark p-2 w-full">
+    <%= form_for @conn, Routes.food_product_path(@conn, :index), [method: :get, class: ""], fn f -> %>
+      <%= search_input f, :query, [class: "text-gray-900 w-full h-16 px-3 rounded focus:outline-none focus:shadow-outline px-8 shadow-lg"] %>
+
+    <% end %>
+
+                <!--<input class="" type="search" placeholder="Szukaj...">
+                <nav class="flex">
+                  <a class="no-underline text-white py-3 px-4 font-medium mr-3 bg-indigo hover:bg-indigo-darker" href="#">Cardamom</a>
+                  <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo-darker hover:bg-indigo" href="#">Cinnamon</a>
+                  <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo hover:bg-indigo-darker" href="#">Chamomille</a>
+                  <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo-darker hover:bg-indigo" href="#">Apple</a>
+                  <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo hover:bg-indigo-darker" href="#">Mint</a>
+                  <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo-darker hover:bg-indigo"  href="#">Curry</a>
+                  <a class="no-underline text-white py-3 px-4 font-medium mx-3 bg-indigo hover:bg-indigo-darker" href="#">Fragrance</a>
+                  <a class="no-underline text-white py-3 px-4 font-medium ml-auto bg-indigo-darker hover:bg-indigo" href="#">Amchoor</a>
+              </nav>-->
+      </section>
+        
+        <!--<a href="http://phoenixframework.org/" class="phx-logo">
+          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+        </a> -->
+    </header>
+
+    <main role="main">
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= render @view_module, @view_template, assigns %>
+
+    </main>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+
+
+    <footer class="bg-teal-500 p-6 text-white">
+      Footer
+    </footer>
+  </div>
+
+  </body>
+</html>
