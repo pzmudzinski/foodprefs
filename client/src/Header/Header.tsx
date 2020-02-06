@@ -6,7 +6,13 @@ const Header = () => {
   return (
     <header className="header">
       <h1>Czego nie je Piotrek?</h1>
-      <img src={githubLogo} alt="github" />
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/pzmudzinski/foodprefs"
+      >
+        <img src={githubLogo} alt="github" />
+      </a>
     </header>
   );
 };

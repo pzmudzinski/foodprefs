@@ -15,6 +15,12 @@
   background: white;
 }
 
+@media (max-width: 700px) {
+  .inputContainer {
+    width: 100%;
+  }
+}
+
 .searchIcon {
   width: 27px;
   height: 27px;

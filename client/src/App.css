@@ -37,6 +37,12 @@ h6 {
   grid-template-columns: 1fr 1fr;
 }
 
+@media (max-width: 700px) {
+  .mainContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
