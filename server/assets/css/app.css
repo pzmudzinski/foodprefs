@@ -1,9 +1,6 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
-@tailwind base;
-
-@tailwind components;
 
 body {
   display: flex;
@@ -85,5 +82,3 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-
-@tailwind utilities;
