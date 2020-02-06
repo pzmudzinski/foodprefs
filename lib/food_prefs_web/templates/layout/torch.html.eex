@@ -18,12 +18,14 @@
       <section id="torch-nav">
         <div class="torch-container">
           <div class="torch-logo">
-            <a href="/">
+            <a href="/admin">
               <h3>Torch</h3>
             </a>
           </div>
           <nav class="torch-nav">
             <!-- nav links here -->
+            <a href="/admin/food_categories">Categories</a>
+            <a href="/admin/food_products">Products</a>
           </nav>
         </div>
       </section>

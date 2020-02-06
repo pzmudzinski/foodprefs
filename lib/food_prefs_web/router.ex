@@ -16,8 +16,10 @@ defmodule FoodPrefsWeb.Router do
 
   scope "/admin", FoodPrefsWeb do
     pipe_through :browser
-
+    get "/", FoodCategoryController, :default
     resources "/food_categories", FoodCategoryController
+    resources "/food_products", FoodProductController
+    post "/batch_update", FoodProductController, :batch_update
   end
 
   scope "/api", FoodPrefsWeb.API do

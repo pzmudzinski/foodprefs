@@ -45,7 +45,8 @@ defmodule FoodPrefs.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:floki, "~> 0.23.0"},
       {:cors_plug, "~> 2.0"},
-      {:torch, "~> 2.0"}
+      {:torch, "~> 2.1"},
+      {:maybe, "~> 1.0.0"}
     ]
   end
 

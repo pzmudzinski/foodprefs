@@ -6,6 +6,10 @@ defmodule FoodPrefsWeb.FoodCategoryController do
 
   plug(:put_layout, {FoodPrefs.LayoutView, "torch.html"})
 
+  def default(conn, _params) do
+    redirect(conn, to: "/admin/food_categories")
+  end
+
   def index(conn, params) do
     case FoodPrefsWeb.paginate_food_categories(params) do
       {:ok, assigns} ->
