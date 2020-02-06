@@ -1,6 +1,6 @@
 import useFetch from "use-http";
 import { FoodCategory, FoodCategorySummary, FoodProduct } from "./models";
-const baseUrl = "http://localhost:4000/api";
+const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
 
 const getUrl = (path: string) => `${baseUrl}${path}`;
 
