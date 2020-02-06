@@ -1,0 +1,32 @@
+.sidePanel {
+  background-color: var(--theme-light);
+  padding: 2em;
+}
+
+.sideLogo {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  fill: white;
+
+  width: 300px;
+  height: 300px;
+  max-width: 50%;
+  max-height: 50%;
+
+  transform: rotate(-14deg);
+
+  animation-name: slidein;
+  animation-timing-function: ease-out;
+  animation-duration: 0.75s;
+}
+
+@keyframes slidein {
+  from {
+    margin-bottom: -100%;
+  }
+
+  to {
+    margin-bottom: 0;
+  }
+}

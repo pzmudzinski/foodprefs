@@ -1,0 +1,6 @@
+.home {
+}
+
+.home > h2 {
+  color: var(--color-dark);
+}

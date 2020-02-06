@@ -1,0 +1,78 @@
+:root {
+  --theme-dark: #5b9279;
+  --theme-light: #8fcb9b;
+  --color-dark: #12130f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overscroll-behavior-y: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-dark);
+}
+
+.App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.react-autosuggest__suggestions-list {
+  list-style: none;
+  padding: 0;
+}
+
+.react-autosuggest__suggestion .segment:hover {
+  background-color: khaki;
+  cursor: pointer;
+}
