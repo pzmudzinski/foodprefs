@@ -21,9 +21,14 @@ defmodule FoodPrefsWeb.FoodProductController do
     end
   end
 
+  def select_categories do
+    FoodPrefsWeb.list_food_categories()
+     |> Enum.map(fn cat -> {cat.name, cat.id} end)
+  end
+
   def new(conn, _params) do
     changeset = FoodPrefsWeb.change_food_product(%FoodProduct{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", [changeset: changeset, categories: select_categories()])
   end
 
   def create(conn, %{"food_product" => food_product_params}) do

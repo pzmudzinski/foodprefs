@@ -30,6 +30,12 @@
       <%= number_input f, :kcal %>
       <%= error_tag f, :kcal %>
     </div>
+
+    <div class="torch-form-group">
+      <%= label f, :category_id %>
+      <%= select f, :category_id, @categories %>
+      <%= error_tag f, :category_id %>
+    </div>
   
     <div class="torch-submit-form">
       <%= submit "Submit", class: "torch-submit-button" %>
