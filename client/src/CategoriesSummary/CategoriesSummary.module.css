@@ -8,3 +8,9 @@
 .summaries table {
   margin: 0 !important;
 }
+
+@media (max-width: 600px) {
+  .summaries {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,6 +3,12 @@
   padding: 2em;
 }
 
+@media (max-width: 600px) {
+  .sidePanel {
+    display: none;
+  }
+}
+
 .sideLogo {
   position: fixed;
   bottom: 2em;
