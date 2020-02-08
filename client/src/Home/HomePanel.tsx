@@ -17,8 +17,7 @@ const HomePanel = () => {
       </h2>
       <SearchBar />
       <h1>Kategorie</h1>
-
-      {summariesFetch.loading && <Loader />}
+      <Loader active={summariesFetch.loading} inline="centered" />
       {summariesFetch.data && (
         <CategoriesSummary categories={summariesFetch.data.summaries} />
       )}
