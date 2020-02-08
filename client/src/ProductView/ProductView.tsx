@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import { Icon, Loader, Segment, Message } from "semantic-ui-react";
+import { Icon, Loader, Segment } from "semantic-ui-react";
 import { useProduct } from "../api";
 import ProductScore from "../shared/ScoreIcon";
 

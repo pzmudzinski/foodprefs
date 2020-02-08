@@ -6,15 +6,6 @@ type Props = {
   score: number;
 };
 
-const styles = {
-  up: {
-    fill: "var(--theme-dark)"
-  },
-  down: {
-    fill: "red"
-  }
-};
-
 const ScoreIcon = ({ score }: Props) => {
   return (
     <span>

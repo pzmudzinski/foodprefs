@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "@reach/router";
-import { List, Segment } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
 import Autosuggest, {
   RenderSuggestionsContainerParams
 } from "react-autosuggest";
 import SearchInput from "./SearchInput";
 import { getPrompts, FoodProduct } from "../api";
 import ScoreIcon from "../shared/ScoreIcon";
-import styles from "./SearchBar.module.css";
 const Highlighter = require("react-highlight-words");
 
 const minimumQueryLength = 3;

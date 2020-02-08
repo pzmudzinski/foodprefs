@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Loader } from "semantic-ui-react";
-import { FoodCategorySummary, useSummaries } from "../api";
+import { useSummaries } from "../api";
 import SearchBar from "../SearchBar";
 import CategoriesSummary from "../CategoriesSummary";
 import "./HomePanel.css";
