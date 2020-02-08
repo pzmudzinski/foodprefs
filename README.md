@@ -1,5 +1,5 @@
 # Food Prefs
-
+![CI](https://github.com/pzmudzinski/foodprefs/workflows/CI/badge.svg)  
 This is fun project using Phoenix on a back end side and React on a front end.
 
 ## Deployment
